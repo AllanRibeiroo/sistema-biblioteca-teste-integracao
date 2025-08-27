@@ -39,3 +39,10 @@ test("Verificar se a busca por nome está funcionando", () => {
     const resultado = bibliotecaService.buscarLivroPorNome("O Senhor dos Anéis");
     expect(resultado).toHaveProperty("nome", "O Senhor dos Anéis");
 });
+
+test("Verificar se a busca por categoria está funcionando", () => {
+    bibliotecaService.criarLivro("O Senhor dos Anéis", "Allan", 2022, "Ficção");
+    const resultado = bibliotecaService.buscarLivroPorCategoria("Ficção");
+    expect(resultado).toHaveProperty("categoria", "Ficção");
+});
+
